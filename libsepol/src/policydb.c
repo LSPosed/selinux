@@ -4459,9 +4459,6 @@ int policydb_read(policydb_t * p, struct policy_file *fp, unsigned verbose)
 		}
 	}
 
-	if (policydb_validate(fp->handle, p))
-		goto bad;
-
 	return POLICYDB_SUCCESS;
       bad:
 	return POLICYDB_ERROR;
