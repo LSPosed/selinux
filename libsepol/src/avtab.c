@@ -567,7 +567,8 @@ int avtab_read_item(struct policy_file *fp, uint32_t vers, avtab_t * a,
 		if (avtab_android_m_compat ||
 			(vers == POLICYDB_VERSION_XPERMS_IOCTL &&
 			buf8 != AVTAB_XPERMS_IOCTLFUNCTION &&
-			buf8 != AVTAB_XPERMS_IOCTLDRIVER)) {
+			buf8 != AVTAB_XPERMS_IOCTLDRIVER &&
+			buf8 != AVTAB_XPERMS_NLMSG)) {
 			if (xperms.specified == 0)
 				xperms.specified = AVTAB_XPERMS_IOCTLFUNCTION;
 			avtab_android_m_compat = 1;
